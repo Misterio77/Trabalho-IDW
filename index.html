@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		
+		<link type="text/css" rel="stylesheet" href="assets/main.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Produtos e serviços para seu melhor amigo">
+		<meta name="keywords" content="petshop, cachorros, gatos, tosa, banho">
+		<meta name="theme-color" content="#607d8b">
+		<title>Casa dos Dogs | Home</title>
+	</head>
+	
+	<body>
+		<nav class="blue-grey waves-effect" role="navigation">
+			<div class="container">
+				<div class="nav-wrapper">
+					
+					<a href="#" class="center brand-logo">
+						<img src="assets/logo.svg" width=60px>
+					</a>
+					
+					<a href="#" data-target="user-menu" class="right sidenav-trigger show-on-large">
+						<i class="material-icons">account_circle</i>
+					</a>
+					
+					<ul class="hide-on-med-and-down">
+						<li><a href="#" class="brand-logo">Casa dos Dogs</a></li>
+					</ul>
+					
+				<a href="#" data-target="nav-menu" class="sidenav-trigger left">
+						<i class="material-icons">menu</i>
+					</a>	
+						<ul class="right hide-on-med-and-down">
+						<li><a href="#">Loja</a></li>
+						<li><a href="#">Serviços</a></li>
+						<li><a href="#">Contato</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Menu do usuário -->
+		<ul class="sidenav sidenav-right" id="user-menu">
+			<li>
+				<div class="user-view">
+					<div class="background">
+						<img src="assets/user_none.jpg">
+					</div>
+					<a href="#"><img class="circle" src="assets/guest.jpg"></a>
+					<a href="#"><span class="white-text name">Visitante</span></a>
+					<a href="#"><span class="white-text email"></span></a>
+				</div>
+			</li>
+			<li>
+				<ul class="collapsible popout">
+					<li class="blue-grey lighten-5">
+						<a href="#!" class="collapsible-header waves-effect"><i class="material-icons">person_add</i>Registrar</a>
+						<div class="collapsible-body section row blue-grey lighten-5">
+							<form class="section">
+								<div class="input-field col s6">
+									<input id="first_name" type="text" name="name" required autocomplete="given-name">
+									<label for="first_name">Nome</label>
+								</div>
+								<div class="input-field col s6">
+									<input id="last_name" type="text" name="lname" required autocomplete="family-name">
+									<label for="last_name">Sobrenome</label>
+								</div>
+								<div class="input-field col s9">
+									<input class="validate" placeholder="1234567890" id="phone" type="tel" name="mobile" required autocomplete="tel" pattern="[0-9]{10,}">
+									<label for="phone">Celular</label>
+									<span class="helper-text">Com DDD, apenas números</span>
+								</div>
+								<div class="input-field col s9">
+									<input class="validate" placeholder="fulano@exemplo.com" id="email" type="email" name="email" required autocomplete="email">
+									<label for="email">E-mail</label>
+								</div>
+								<div class="input-field col s9">
+									<input class="validate" id="password" type="password" name="password" required autocomplete="new-password" pattern=".{4,}">
+									<label for="password">Senha</label>
+									<span class="helper-text">No mínimo 4 caracteres</span>
+								</div>
+								<div class="container">
+									<button href="#" class="btn waves-effect blue-grey" name="action">Registrar
+								</div>
+							</form>
+						</div>
+					</li>
+					<li class="blue-grey lighten-5">
+						<a href="#!" class="collapsible-header waves-effect"><i class="material-icons">exit_to_app</i>Entrar</a>
+						<div class="collapsible-body section row blue-grey lighten-5">
+							<form class="section">
+								<div class="input-field col s9">
+									<input class="validate" id="email_l" type="email" name="email" required autocomplete="email">
+									<label for="email_l">E-mail</label>
+								</div>
+								<div class="input-field col s9">
+									<input class="validate" id="password_l" type="password" name="password" required autocomplete="current-password" pattern=".{4,}">
+									<label for="password_l">Senha</label>
+								</div>
+								<div class="container">
+									<button href="#" class="btn waves-effect blue-grey" name="action">Entrar
+								</div>
+							</form>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<ul class="sidenav sidenav-left" id="nav-menu">
+			<div class="section">
+				<a href="#" class="center">
+					<div class="container">
+						<img src="assets/logo.svg" width=60px>
+					</div>
+					<p class="header center brown-text">Casa dos Dogs</p>
+				</a>
+				<div class="divider"></div>
+			</div>
+			
+			<li><a href="">Produtos</a></li>
+			<li><a href="">Serviços</a></li>
+			<li><a href="">Contato</a></li>
+		</ul>
+
+		<main>
+			<div class="parallax-container">
+				<div class="section no-pad-bot">
+					<div class="container">
+						<br><br>
+						<h1 class="header center brown-text">Casa dos Dogs</h1>
+						<div class="row center">
+							<h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+						</div>
+						<div class="row center">
+							<a href="#" id="download-button" class="btn-large waves-effect brown">saiba mais</a>
+						</div>
+						<br><br>
+
+					</div>
+				</div>
+				<div class="parallax"><img src="assets/bg1.jpg"></div>
+			</div>
+			<div class="section white">
+				<div class="row container">
+					<h2 class="header">Lorem ipsum dolor</h2>
+					<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Lectus vestibulum mattis ullamcorper velit. Nibh tortor id aliquet lectus proin nibh. Aliquet risus feugiat in ante metus dictum. Sed viverra tellus in hac habitasse platea dictumst vestibulum.</p>
+				</div>
+			</div>
+			<div class="parallax-container">
+				<div class="parallax"><img src="assets/bg3.jpg"></div>
+			</div>
+		</main>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script type="text/javascript" src="src/jquery.maskx.js"></script>
+		<script type="text/javascript" src="assets/init.js"></script>
+	</body>
+</html>
