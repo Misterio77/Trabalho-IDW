@@ -14,35 +14,36 @@
 	</head>
 	
 	<body>
-		<nav class="blue-grey waves-effect" role="navigation">
-			<div class="container">
-				<div class="nav-wrapper">
-					
-					<a href="#" class="center brand-logo">
-						<img src="assets/logo.svg" width=60px>
-					</a>
-					
-					<a href="#" data-target="user-menu" class="right sidenav-trigger show-on-large">
-						<i class="material-icons">account_circle</i>
-					</a>
-					
-					<ul class="hide-on-med-and-down">
-						<li><a href="#" class="brand-logo">Casa dos Dogs</a></li>
-					</ul>
-					
+		<!-- Dropdown Navegação -->
+		<ul id="dropdown-nav" class="dropdown-content">
+			<li><a class="blue-grey-text" href="#!">Home</a></li>
+			<li><a class="blue-grey-text" href="#!">Loja</a></li>
+			<li><a class="blue-grey-text" href="#!">Perfil</a></li>
+		</ul>
+		<nav class="blue-grey role="navigation">
+			<div class="nav-wrapper container">
 				<a href="#" data-target="nav-menu" class="sidenav-trigger left">
-						<i class="material-icons">menu</i>
-					</a>	
-						<ul class="right hide-on-med-and-down">
-						<li><a href="#">Loja</a></li>
-						<li><a href="#">Serviços</a></li>
-						<li><a href="#">Contato</a></li>
-					</ul>
-					
-				</div>
+					<i class="material-icons">menu</i>
+				</a>
+				<ul class="hide-on-med-and-down">
+					<li>
+						<a href="#" class="brand-logo">Casa dos Dogs</a>
+					</li>
+				</ul>
+
+				<a href="#" class="center brand-logo">
+					<img src="assets/logo.svg" width=60px>
+				</a>
+				
+				<a href="#" data-target="user-menu" class="right sidenav-trigger show-on-large">
+					<i class="material-icons">account_circle</i>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a class="dropdown-trigger" href="#!" data-target="dropdown-nav">Home<i class="material-icons right">arrow_drop_down</i></a></li>
+				</ul>
+				
 			</div>
 		</nav>
-		
 		<!-- Menu do usuário -->
 		<ul class="sidenav sidenav-right" id="user-menu">
 			<li>
@@ -157,7 +158,6 @@
 		</main>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script type="text/javascript" src="src/jquery.maskx.js"></script>
 		<script type="text/javascript" src="assets/init.js"></script>
 	</body>
 </html>
