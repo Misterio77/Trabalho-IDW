@@ -8,8 +8,10 @@
 		$('.collapsible').collapsible();
 		$('.modal').modal();
 		$('.parallax').parallax();
-		$('.dropdown-trigger').dropdown();
-
+		$('.scrollspy').scrollSpy();
+		$(".dropdown-trigger").dropdown({
+			coverTrigger: false,
+		});
 	}); // end of document ready
 })(jQuery); // end of jQuery name space
 
@@ -19,3 +21,5 @@ $("input[name='phone']:first").keyup(function(e){
 	if(value.length==2)$(this).val($(this).val()+' ');
 	if(value.length==4|value.length==5)$(this).val($(this).val()+'-')
 });
+
+
