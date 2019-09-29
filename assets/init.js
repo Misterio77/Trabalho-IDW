@@ -14,6 +14,8 @@
 		});
 		$('.tabs').tabs();
 		$('.tooltipped').tooltip();
+		$('.datepicker').datepicker();
+		$('.timepicker').timepicker();
 		$('.chips-autocomplete').chips({
 			placeholder: 'Pesquisar',
 			autocompleteOptions: {
