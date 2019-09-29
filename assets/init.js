@@ -12,6 +12,30 @@
 		$(".dropdown-trigger").dropdown({
 			coverTrigger: false,
 		});
+		$('.tabs').tabs();
+		$('.tooltipped').tooltip();
+		$('.chips-autocomplete').chips({
+			placeholder: 'Pesquisar',
+			autocompleteOptions: {
+				data: {
+					'Ração': null,
+					'Comida': null,
+					'Coleira': null,
+					'Shampoo': null,
+					'Escova': null,
+					'Brinquedo': null,
+					'Roupa': null,
+
+					'Pedigree': null,
+					'Special Dog': null,
+					'Magnus': null,
+					'Xodó': null,
+					'PremieR': null
+				},
+				limit: Infinity,
+				minLength: 1
+			}
+		});
 	}); // end of document ready
 })(jQuery); // end of jQuery name space
 

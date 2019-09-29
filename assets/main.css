@@ -2,17 +2,32 @@
 	height: 750px;
 }
 blockquote{
-  margin: 20px 0;
-  padding-left: 1.5rem;
-  border-left: 5px solid #81c784;
+	margin: 20px 0;
+	padding-left: 1.5rem;
+	border-left: 5px solid #81c784;
 }
 
 .icon-block {
-  padding: 0 15px;
+	padding: 0 15px;
 }
 .icon-block .material-icons {
-  font-size: inherit;
+	font-size: inherit;
 }
 p {
-  line-height: 2rem;
+	line-height: 2rem;
+}
+
+.tabs .tab a {
+	color: #607d8b!important;
+}
+.tab a.active {
+	background-color: #607d8b !important;
+	color: #FFFFFF!important;
+}
+.tabs .tab a:hover {
+	background-color: #607d8b !important;
+	color: #FFFFFF!important;
+}
+.tabs .indicator{
+	background-color: #FFFFFF!important;
 }

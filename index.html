@@ -1,4 +1,6 @@
-<!DOCTYPE html><html>	<head>
+<!DOCTYPE html>
+<html
+>	<head>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		
@@ -13,7 +15,7 @@
 	
 	<body>
 		<div class="navbar-fixed">
-			<nav class="blue-grey role="navigation">
+			<nav class="blue-grey">
 				<div class="nav-wrapper container">
 				
 					<a href="#" data-target="nav-menu" class="sidenav-trigger left">
@@ -22,12 +24,12 @@
 					
 					<ul class="hide-on-med-and-down">
 						<li>
-							<a href="" class="brand-logo">Casa dos Dogs</a>
+							<a href="index.html" class="brand-logo">Casa dos Dogs</a>
 						</li>
 					</ul>
 
 					<a href="#" class="center brand-logo">
-						<img src="assets/logo.svg" width=60px>
+						<img src="assets/logo.svg" alt="casa dos dogs" width=60>
 					</a>
 					
 					<a href="#" data-target="user-menu" class="right sidenav-trigger show-on-large">
@@ -90,7 +92,7 @@
 									<span class="helper-text">No mínimo 4 caracteres</span>
 								</div>
 								<div class="container">
-									<button href="#" class="btn waves-effect blue-grey" name="action">Registrar
+									<button class="btn waves-effect blue-grey" name="action">Registrar</button>
 								</div>
 							</form>
 						</div>
@@ -111,7 +113,7 @@
 									<label for="password_l">Senha</label>
 								</div>
 								<div class="container">
-									<button href="#" class="btn waves-effect blue-grey" name="action">Entrar
+									<button class="btn waves-effect blue-grey" name="action">Entrar</button>
 								</div>
 							</form>
 						</div>
@@ -123,36 +125,37 @@
 		<!-- Dropdown Navegação -->
 		<ul id="dropdown-nav" class="dropdown-content">
 			<li>
-				<a class="blue-grey-text" href="#">Home</a>
+				<a class="blue-grey-text" href="index.html">Home</a>
 			</li>
 			<li>
-				<a class="blue-grey-text" href="#">Loja</a>
+				<a class="blue-grey-text" href="loja.html">Loja</a>
 			</li>
 			<li>
-				<a class="blue-grey-text" href="#">Conta</a>
+				<a class="blue-grey-text" href="conta.html">Conta</a>
 			</li>
 		</ul>
 		
 		<!-- Hamburguer Navegação (mobile apenas)-->
 		<ul class="sidenav sidenav-left" id="nav-menu">
-			<div class="section">
-				<a href="#" class="center">
-					<div class="container">
-						<img src="assets/logo.svg" width=60px>
-					</div>
-					<p class="header center blue-grey-text">Casa dos Dogs</p>
-				</a>
-				<div class="divider"></div>
-			</div>
-			
 			<li>
-				<a href="#">Home</a>
+				<div class="section">
+					<a href="index.html" class="center">
+						<div class="container">
+							<img src="assets/logo.svg" width=60>
+						</div>
+						<p class="header center blue-grey-text">Casa dos Dogs</p>
+					</a>
+					<div class="divider"></div>
+				</div>
 			</li>
 			<li>
-				<a href="#">Loja</a>
+				<a href="index.html">Home</a>
 			</li>
 			<li>
-				<a href="#">Conta</a>
+				<a href="loja.html">Loja</a>
+			</li>
+			<li>
+				<a href="conta.html">Conta</a>
 			</li>
 		</ul>
 
@@ -166,7 +169,7 @@
 							<h5 class="header col s12 light">Produtos e serviços especiais, para seus amiguinhos especiais.</h5>
 						</div>
 						<div class="row center">
-							<a href="#" id="store-button" class="btn-large waves-effect brown">loja virtual</a>
+							<a href="loja.html" id="store-button" class="btn-large waves-effect brown">loja virtual</a>
 							<a href="#o-que-fazemos" id="about-button" class="btn-large waves-effect brown">saiba mais</a>
 						</div>
 
@@ -229,24 +232,24 @@
 					<h2 class="header">Precisa de algo?</h2>
 					<p>Dê um toque que responderemos rapidinho!</p>
 					<form class="col s12">
-						<div class="input-field col s3">
-							<input id="first_name" type="text" name="name" required autocomplete="given-name">
-							<label for="first_name">Nome</label>
+						<div class="input-field col l3 s6">
+							<input id="first_name_c" type="text" name="name" required autocomplete="given-name">
+							<label for="first_name_c">Nome</label>
 						</div>
-						<div class="input-field col s3">
-							<input id="last_name" type="text" name="lname" required autocomplete="family-name">
-							<label for="last_name">Sobrenome</label>
+						<div class="input-field col l3 s6">
+							<input id="last_name_c" type="text" name="lname" required autocomplete="family-name">
+							<label for="last_name_c">Sobrenome</label>
 						</div>
-						<div class="input-field col s6">
-							<input class="validate" placeholder="fulano@exemplo.com" id="email" type="email" name="email" required autocomplete="email">
-							<label for="email">E-mail</label>
+						<div class="input-field col l6 s9">
+							<input class="validate" placeholder="fulano@exemplo.com" id="email_c" type="email" name="email" required autocomplete="email">
+							<label for="email_c">E-mail</label>
 						</div>
 						<div class="input-field col s9">
-							<textarea id="mensagem" class="materialize-textarea"></textarea>
-							<label for="mensagem">Mensagem</label>
+							<textarea id="mensagem_c" class="materialize-textarea"></textarea>
+							<label for="mensagem_c">Mensagem</label>
 						</div>
 						<div class="col s3">
-							<button href="#" class="btn waves-effect blue-grey" name="action">Enviar
+							<button  class="btn waves-effect blue-grey" name="action">Enviar</button>
 						</div>
 					</form>
 				</div>
@@ -266,10 +269,10 @@
 					<div class="col l6 s12">
 						<h5 class="white-text">Mapa do site</h5>
 						<ul>
-							<li><a class="white-text" href="">Home</a></li>
-							<li><a class="white-text" href="">Loja</a></li>
-							<li><a class="white-text" href="">Conta</a></li>
-							<li><a class="white-text" href="">Área restrita</a></li>
+							<li><a class="white-text" href="index.html">Home</a></li>
+							<li><a class="white-text" href="loja.html">Loja</a></li>
+							<li><a class="white-text" href="conta.html">Conta</a></li>
+							<li><a class="white-text" href="admin.html">Área restrita</a></li>
 						</ul>
 					</div>
 					<div class="col l3 s12">
