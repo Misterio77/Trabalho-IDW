@@ -4,6 +4,20 @@ Projeto da disciplina Introdução ao Desenvolvimento Web
 Nome: Gabriel Silva Fontes
 N USP: 10856803
 
+A versão live do site pode ser visualizada em [idw.misterio.me](http://idw.misterio.me/index.html)
+
+
+ ## Versões:
+
+[Stage 1: Presentation page](https://github.com/Misterio77/Trabalho-IDW/tree/b6af987136f75a9ebc49ca7d6b462c8b90bc4eb5)
+
+[Stage 2: Functional Mockup](https://github.com/Misterio77/Trabalho-IDW/tree/178a819bd74ada596d46582e52641720c6f414ef)
+
+Stage 3: Clientside
+
+Stage 4: Serverside
+
+
 ## Arquivos:
 
 ##### Páginas:
@@ -23,13 +37,18 @@ N USP: 10856803
 **main.css**: Css da página, utilizei para fazer pequenas mudanças no estilo do materialize, conforme nescessário
 
 **init.js**: Arquivo simples de JS, utilizando JQuery para inicializar os componentes do materialize utilizados
-      
- ## Versões:
 
-[Stage 1: Presentation page](https://github.com/Misterio77/Trabalho-IDW/tree/b6af987136f75a9ebc49ca7d6b462c8b90bc4eb5)
+## Descrições:
 
-[Stage 2: Functional Mockup](https://github.com/Misterio77/Trabalho-IDW/tree/9afabf1bbfb31c5fbe2619ea4be80a6f9c039d4f)
+##### Funcionalidade
+Acho que está razoávelmente auto-explicativo, mas é importante lembrar que o menu do usuário (lado direito) está da forma atual como um exemplo apenas, ele irá depender apenas do estado de login atual. Além disso, os links para páginas de administração só serão visíveis para administradores logados.
 
-Stage 3: Clientside
+O usuário poderá adquirir produtos, serviços, editar seu registro, adicionar seus animais e visualizar horários.
 
-Stage 4: Serverside
+O administrador poderá registrar produtos, serviços, contas, alterar inventário, e alterar horários.
+
+##### Informações armazenadas
+Ainda não sei bem como logins funcionam (cookies? chaves?), mas armazenaremos sessões, usuários, produtos, serviços, compras e horários agendados.
+
+##### Diagrama
+![Diagrama](https://raw.githubusercontent.com/Misterio77/Trabalho-IDW/master/flowchart.svg?sanitize=true)
