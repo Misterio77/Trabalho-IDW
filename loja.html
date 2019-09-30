@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='pt-br'>
 	<head>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -8,7 +8,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="description" content="Produtos e serviços para seu melhor amigo">
-		<meta name="keywords" content="petshop, cachorros, gatos, tosa, banho">
+		<meta name="keywords" content="petshop, cachorros, tosa, banho">
 		<meta name="theme-color" content="#607d8b">
 		<title>Casa dos Dogs | Home</title>
 	</head>
@@ -29,7 +29,7 @@
 					</ul>
 
 					<a href="#" class="center brand-logo">
-						<img src="assets/logo.svg" alt="casa dos dogs" width=60>
+						<img alt="logo" src="assets/logo.svg" width=60>
 					</a>
 					
 					<a href="#" data-target="user-menu" class="right sidenav-trigger show-on-large">
@@ -53,9 +53,9 @@
 			<li>
 				<div class="user-view">
 					<div class="background">
-						<img src="assets/user_customer.jpg">
+						<img alt="" src="assets/user_customer.jpg">
 					</div>
-					<a href="#"><img class="circle" src="assets/guest.jpg"></a>
+					<a href="#"><img alt="" class="circle" src="assets/guest.jpg"></a>
 					<a href="#"><span class="white-text name">Fulano da Silva</span></a>
 					<a href="#"><span class="white-text email">fulano@exemplo.com</span></a>
 				</div>
@@ -63,21 +63,15 @@
 			<li>
 				<ul class="collapsible popout">
 					<li class="blue-grey lighten-5">
-						<a href="#!" class="waves-effect">
+						<a href="conta.html#perfil" class="waves-effect">
 							<i class="material-icons">person</i>
 							Perfil
 						</a>
 					</li>
 					<li class="blue-grey lighten-5">
-						<a href="#!" class="waves-effect">
+						<a href="conta.html#animais" class="waves-effect">
 							<i class="material-icons">pets</i>
 							Seus pets
-						</a>
-					</li>
-					<li class="blue-grey lighten-5">
-						<a href="#!" class="waves-effect">
-							<i class="material-icons">access_time</i>
-							Agendamentos
 						</a>
 					</li>
 					<li class="blue-grey lighten-5">
@@ -115,7 +109,7 @@
 				<div class="section">
 					<a href="index.html" class="center">
 						<div class="container">
-							<img src="assets/logo.svg" width=60>
+							<img alt="logo" src="assets/logo.svg" width=60>
 						</div>
 						<p class="header center blue-grey-text">Casa dos Dogs</p>
 					</a>
@@ -125,7 +119,7 @@
 			<li>
 				<a href="index.html">Home</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="loja.html">Loja</a>
 			</li>
 			<li>
@@ -142,9 +136,11 @@
 					</ul>
 				</div>
 			</div>
-			
+			<div class="parallax-container parallax-short">
+				<div class="parallax"><img class="center" src="assets/bg1.jpg"></div>
+			</div>
 			<!-- Produtos -->
-			<div id="produtos" class="container">
+			<div id="produtos" class="container scrollspy">
 				<div class="fixed-action-btn">
 					<a class="btn-floating btn-large brown">
 						<i class="large material-icons">shopping_cart</i>
@@ -156,7 +152,7 @@
 						<div class="chips chips-autocomplete"></div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row section">
 					<div class="col s6 m4 l3">
 						<div class="hoverable card" style="overflow: visible;">
 							<div class="card-image waves-effect waves-block waves-light">
@@ -165,7 +161,8 @@
 							<div class="card-content">
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Ração<i class="material-icons right">more_vert</i></span>
-								<p class="activator">Pedigree 1kg</p>
+								<p class="activator">Pedigree</p>
+								<p class="activator">1kg</p>
 								<p class="activator">R$ 20</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -186,6 +183,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Pelúcia<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Taco</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 35</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -205,6 +203,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Escova<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Glendan</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 23</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -223,7 +222,8 @@
 							<div class="card-content">
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Coleira<i class="material-icons right">more_vert</i></span>
-								<p class="activator">Nylon 1,2m</p>
+								<p class="activator">Nylon</p>
+								<p class="activator">1,2m</p>
 								<p class="activator">R$ 57</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -243,6 +243,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -262,6 +263,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -281,6 +283,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -300,6 +303,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -319,6 +323,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -338,6 +343,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -357,6 +363,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -376,6 +383,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -395,6 +403,7 @@
 								<a class="btn-floating halfway-fab right waves-effect brown tooltipped" data-position="bottom" data-tooltip="Adicionar ao carrinho"><i class="material-icons">add_shopping_cart</i></a>
 								<span class="card-title activator grey-text text-darken-4">Exemplo<i class="material-icons right">more_vert</i></span>
 								<p class="activator">Exemplo</p>
+								<p class="activator">1 Unidade</p>
 								<p class="activator">R$ 00</p>
 							</div>
 							<div class="card-reveal" style="display: none; transform: translateY(0%);">
@@ -408,7 +417,7 @@
 			</div>
 			
 			<!-- Serviços -->
-			<div id="servicos" class="container">
+			<div id="servicos" class="container scrollspy">
 				<div class="section">
 					<form>
 						<h5>Agendar Serviços</h5>

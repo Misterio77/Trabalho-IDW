@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+	<head>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		
+		<link type="text/css" rel="stylesheet" href="assets/main.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Produtos e serviços para seu melhor amigo">
+		<meta name="keywords" content="petshop, cachorros, tosa, banho">
+		<meta name="theme-color" content="#607d8b">
+		<title>Casa dos Dogs | Home</title>
+	</head>
+	
+	<body>
+		<div class="navbar-fixed">
+			<nav class="blue-grey">
+				<div class="nav-wrapper container">
+				
+					<a href="#" data-target="nav-menu" class="sidenav-trigger left">
+						<i class="material-icons">menu</i>
+					</a>
+					
+					<ul class="hide-on-med-and-down">
+						<li>
+							<a href="index.html" class="brand-logo">Casa dos Dogs</a>
+						</li>
+					</ul>
+
+					<a href="#" class="center brand-logo">
+						<img alt="logo" src="assets/logo.svg" width=60>
+					</a>
+					
+					<a href="#" data-target="user-menu" class="right sidenav-trigger show-on-large">
+						<i class="material-icons">account_circle</i>
+					</a>
+					
+					<ul class="right hide-on-med-and-down">
+						<li>
+							<a class="dropdown-trigger" href="#" data-target="dropdown-nav">
+								Conta
+								<i class="material-icons right">arrow_drop_down</i>
+							</a>
+						</li>
+					</ul>
+					
+				</div>
+			</nav>
+		</div>
+		<!-- Menu do usuário -->
+		<ul class="sidenav sidenav-right" id="user-menu">
+			<li>
+				<div class="user-view">
+					<div class="background">
+						<img alt="" src="assets/user_customer.jpg">
+					</div>
+					<a href="#"><img alt="" class="circle" src="assets/guest.jpg"></a>
+					<a href="#"><span class="white-text name">Fulano da Silva</span></a>
+					<a href="#"><span class="white-text email">fulano@exemplo.com</span></a>
+				</div>
+			</li>
+			<li>
+				<ul class="collapsible popout">
+					<li class="blue-grey lighten-5">
+						<a href="conta.html#perfil" class="waves-effect">
+							<i class="material-icons">person</i>
+							Perfil
+						</a>
+					</li>
+					<li class="blue-grey lighten-5">
+						<a href="conta.html#animais" class="waves-effect">
+							<i class="material-icons">pets</i>
+							Seus pets
+						</a>
+					</li>
+					<li class="blue-grey lighten-5">
+						<a href="conta.html#compras" class="waves-effect">
+							<i class="material-icons">shopping_basket</i>
+							Compras
+						</a>
+					</li>
+					<li class="blue-grey lighten-5">
+						<a href="index.html" class="waves-effect">
+							<i class="material-icons">power_settings_new</i>
+							Sair
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<!-- Dropdown Navegação -->
+		<ul id="dropdown-nav" class="dropdown-content">
+			<li>
+				<a class="blue-grey-text" href="index.html">Home</a>
+			</li>
+			<li>
+				<a class="blue-grey-text" href="loja.html">Loja</a>
+			</li>
+			<li>
+				<a class="blue-grey-text" href="conta.html">Conta</a>
+			</li>
+		</ul>
+		
+		<!-- Hamburguer Navegação (mobile apenas)-->
+		<ul class="sidenav sidenav-left" id="nav-menu">
+			<li>
+				<div class="section">
+					<a href="index.html" class="center">
+						<div class="container">
+							<img alt="logo" src="assets/logo.svg" width=60>
+						</div>
+						<p class="header center blue-grey-text">Casa dos Dogs</p>
+					</a>
+					<div class="divider"></div>
+				</div>
+			</li>
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="loja.html">Loja</a>
+			</li>
+			<li class="active">
+				<a href="conta.html">Conta</a>
+			</li>
+		</ul>
+	
+		<main>
+			<div class="parallax-container parallax-short">
+				<div class="parallax"><img class="center" src="assets/bg1.jpg"></div>
+			</div>
+			<div class="container">
+				<div id="perfil" class="section scrollspy row">
+					<h5>Seu perfil</h5>
+					<div class="col s8 m5 l3">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img src="assets/guest.jpg">
+								<span class="card-title">Fulano da Silva</span>
+							</div>
+							<div class="card-content">
+								<a class="btn-floating halfway-fab waves-effect brown"><i class="material-icons">edit</i></a>
+								<p>fulano@exemplo.com</p>
+								<div class="divider"></div>
+								<p>Rua da Concha, 124</p>
+								<p>Fenda do Biquini, Oceano Pacifico</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="parallax-container parallax-short">
+				<div class="parallax"><img class="center" src="assets/bg1.jpg"></div>
+			</div>
+			<div class="container">
+				<div id="animais" class="section scrollspy row">
+					<h5>Seus animais</h5>
+					<div class="col s8 m6 l3">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img src="assets/dogs/1.jpg">
+								<a class="btn-floating halfway-fab waves-effect brown"><i class="material-icons">edit</i></a>
+								<a class="left btn-floating halfway-fab waves-effect brown"><i class="material-icons">schedule</i></a>
+							</div>
+							<div class="card-content">
+								<h5>Bimbo</h5>
+								<div class="divider"></div>
+								<p>3 meses</p>
+								<p>1 serviço agendado</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s8 m6 l3">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img src="assets/dogs/2.jpg">
+								<a class="btn-floating halfway-fab waves-effect brown"><i class="material-icons">edit</i></a>
+								<a class="left btn-floating halfway-fab waves-effect brown"><i class="material-icons">schedule</i></a>
+							</div>
+							<div class="card-content">
+								<h5>Vivi</h5>
+								<div class="divider"></div>
+								<p>1 mês</p>
+								<p>2 serviços agendados</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s8 m6 l3">
+						<div class="card hoverable">
+							<div class="card-image">
+								<img src="assets/dogs/3.jpg">
+								<a class="btn-floating halfway-fab waves-effect brown"><i class="material-icons">edit</i></a>
+								<a class="left btn-floating halfway-fab waves-effect brown"><i class="material-icons">schedule</i></a>
+							</div>
+							<div class="card-content">
+								<h5>Elvis</h5>
+								<div class="divider"></div>
+								<p>2 anos</p>
+								<p>Nenhum serviço agendado</p>
+							</div>
+						</div>
+					</div>
+					<div class="col s8 m6 l3">
+						<div class="card hoverable btn-large waves-effect brown">
+							<i class="material-icons">add</i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="parallax-container parallax-short">
+				<div class="parallax"><img class="center" src="assets/bg1.jpg"></div>
+			</div>
+			<div class="container">
+				<div id="compras" class="section scrollspy row">
+					<h5>Histórico de compras</h5>
+					<table class="section">
+						<thead>
+							<tr>
+								<th>Data</th>
+								<th>Item</th>
+								<th>Quantia</th>
+								<th>Valor (individual)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>16/09/2019</td>
+								<td>Ração Special Dog</td>
+								<td>x3</td>
+								<td>R$30</td>
+							</tr>
+							<tr>
+								<td>21/09/2019</td>
+								<td>Coleira</td>
+								<td>x1</td>
+								<td>R$60</td>
+							</tr>
+							<tr>
+								<td>29/09/2019</td>
+								<td>Pelúcia Bob Esponja</td>
+								<td>x1</td>
+								<td>R$20</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="parallax-container">
+				<div class="parallax"><img class="center" src="assets/bg1.jpg"></div>
+			</div>
+		</main>
+		
+		<footer class="page-footer blue-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col l3 s12">
+						<h5 class="white-text">Casa dos Dogs</h5>
+						<p class="grey-text text-lighten-4">
+						Produtos e serviços especiais, para seus amiguinhos especiais.
+						</p>
+						<p><a class="white-text" href="mailto:contato@casadosdogs.com">contato@casadosdogs.com.br</a></p>
+						<p>(16) 12345-7890</p>
+					</div>
+					<div class="col l6 s12">
+						<h5 class="white-text">Mapa do site</h5>
+						<ul>
+							<li><a class="white-text" href="index.html">Home</a></li>
+							<li><a class="white-text" href="loja.html">Loja</a></li>
+							<li><a class="white-text" href="conta.html">Conta</a></li>
+							<li><a class="white-text" href="admin.html">Área restrita</a></li>
+						</ul>
+					</div>
+					<div class="col l3 s12">
+						<h5 class="white-text">Faça uma visita!</h5>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3699.1115952592336!2d-47.89712098451265!3d-22.007034685476768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b877325a2f2381%3A0x7923e6d8ad682ad1!2sInstitute%20of%20Mathematics%20and%20Computer%20Sciences!5e0!3m2!1sen!2sbr!4v1568293714864!5m2!1sen!2sbr" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+				Desenvolvido por <a class="blue-grey-text text-lighten-3" href="https://misterio.me">Misterio</a>, com <a class="blue-grey-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script type="text/javascript" src="assets/init.js"></script>
+	</body>
+</html>

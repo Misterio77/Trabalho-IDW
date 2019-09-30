@@ -1,6 +1,11 @@
 .parallax-1 {
 	height: 750px;
 }
+
+.parallax-short {
+	height: 100px;
+}
+
 blockquote{
 	margin: 20px 0;
 	padding-left: 1.5rem;
