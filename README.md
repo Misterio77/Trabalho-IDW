@@ -9,9 +9,9 @@ A versão live do site pode ser visualizada em [idw.misterio.me](http://idw.mist
 
  ## Versões:
 
-[Stage 1: Presentation page](https://github.com/Misterio77/Trabalho-IDW/tree/b6af987136f75a9ebc49ca7d6b462c8b90bc4eb5)
+[Stage 1: Presentation page](https://github.com/Misterio77/Trabalho-IDW/tree/presentation)
 
-[Stage 2: Functional Mockup](https://github.com/Misterio77/Trabalho-IDW/tree/178a819bd74ada596d46582e52641720c6f414ef)
+[Stage 2: Functional Mockup](https://github.com/Misterio77/Trabalho-IDW/tree/master)
 
 Stage 3: Clientside
 
