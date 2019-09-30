@@ -4,7 +4,7 @@ Projeto da disciplina Introdução ao Desenvolvimento Web
 Nome: Gabriel Silva Fontes
 N USP: 10856803
 
-A versão live do site pode ser visualizada em [idw.misterio.me](http://idw.misterio.me/index.htmml)
+A versão live do site pode ser visualizada em [idw.misterio.me](http://idw.misterio.me/index.html)
 
 
  ## Versões:
