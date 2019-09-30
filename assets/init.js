@@ -16,8 +16,9 @@
 		$('.tooltipped').tooltip();
 		$('.datepicker').datepicker();
 		$('.timepicker').timepicker();
+		$('select').formSelect();
 		$('.chips-autocomplete').chips({
-			placeholder: 'Pesquisar',
+			placeholder: 'Categorias',
 			autocompleteOptions: {
 				data: {
 					'Ração': null,
