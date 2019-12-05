@@ -1,4 +1,4 @@
-# Trabalho-IDW
+# Trabalho-IDW - Functional Mockup
 Projeto da disciplina Introdução ao Desenvolvimento Web
 
 Nome: Gabriel Silva Fontes
