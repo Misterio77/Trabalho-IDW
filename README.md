@@ -51,4 +51,4 @@ O administrador poderá registrar produtos, serviços, contas, alterar inventár
 Ainda não sei bem como logins funcionam (cookies? chaves?), mas armazenaremos sessões, usuários, produtos, serviços, compras e horários agendados.
 
 ##### Diagrama
-![Diagrama](https://raw.githubusercontent.com/Misterio77/Trabalho-IDW/master/flowchart.svg?sanitize=true)
+![Diagrama](https://raw.githubusercontent.com/Misterio77/Trabalho-IDW/master/assets/flowchart.svg?sanitize=true)
