@@ -15,7 +15,7 @@ A versão live do site pode ser visualizada em [idw.misterio.me](http://idw.mist
 
 Stage 3: Clientside only (Pulei essa entrega)
 
-[Stage 4: Final version] (https://github.com/Misterio77/Trabalho-IDW/tree/master) - Work in Progress!
+[Stage 4: Final version](https://github.com/Misterio77/Trabalho-IDW/tree/master) - Work in Progress!
 
 
 ## Arquivos:
