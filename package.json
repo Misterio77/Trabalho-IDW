@@ -2,10 +2,10 @@
   "name": "casa-dos-dogs",
   "version": "1.0.0",
   "description": "Backend NodeJS e Express",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
   },
   "author": "Misterio",
   "license": "GPL-3.0-or-later",
@@ -13,8 +13,10 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "mongodb": "^3.3.5",
-    "mongoose": "^5.7.13"
+    "mongoose": "^5.7.13",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
