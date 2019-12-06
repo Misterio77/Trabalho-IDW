@@ -1,0 +1,13 @@
+usuarios
+  info
+  historico
+  animais
+    info
+    horarios
+
+produtos
+  info
+  estoque
+
+serviços
+  info
