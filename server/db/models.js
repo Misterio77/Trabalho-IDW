@@ -41,7 +41,6 @@ module.exports = mongoose => {
       agenda : [{
         data    : Date,
         servico : {
-          _id: {type: String, default: shortid.generate},
           type  : mongoose.Schema.Types.ObjectId,
           ref   : 'servicos'
         }

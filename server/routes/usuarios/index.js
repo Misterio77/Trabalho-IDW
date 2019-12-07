@@ -3,21 +3,19 @@ Trabalho IDW
 Gabriel Fontes
 
 Arquivo index do API dos usuarios
+
+/api/usuarios
 */
 
 
 
-const usuarios = require('express').Router();
+const usuarios = require('express').Router({'mergeParams': true});
 
-//Rotas desse nivel
-usuarios.get    ('/', require('./get-todos'));
-usuarios.post   ('/', require('./post'));
-usuarios.get    ('/:idUsuario', require('./get-um'));
-usuarios.put    ('/:idUsuario', require('./put'));
-usuarios.delete ('/:idUsuario', require('./delete'));
+//Rotas que executam em /
+usuarios.use('/', require('./raiz'));
 
-//Rotas abaixo
-//usuarios.use('/:idUsuario/animais', require('./animais'));
-//usuarios.use('/:idUsuario/compras', require('./compras'));
+//Rotas que executam num usuario dado
+usuarios.use('/:idUsuario', require('./ids'));
 
+//Exportar rotas
 module.exports = usuarios;
