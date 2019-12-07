@@ -5,8 +5,6 @@ Gabriel Fontes
 Arquivo principal do API, que conecta todas as partes
 */
 
-
-
 const routes = require('express').Router({'mergeParams': true});
 
 //GET Teste
