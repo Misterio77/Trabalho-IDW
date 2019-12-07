@@ -3,19 +3,19 @@ Trabalho IDW
 Gabriel Fontes
 
 Arquivo index do API dos produtos
+
+/api/produtos
 */
 
 
 
-const produtos = require('express').Router();
+const produtos = require('express').Router({'mergeParams': true});
 
+//Rotas que executam em
+produtos.use('/', require('./raiz'));
 
-//Rotas desse nivel
-produtos.get    ('/', require('./get-todos'));
-produtos.post   ('/', require('./post'));
-produtos.get    ('/:idProduto', require('./get-um'));
-produtos.put    ('/:idProduto', require('./put'));
-produtos.delete ('/:idProduto', require('./delete'));
+//Rotas que executam num dado produto
+produtos.use('/:idProduto', require('./ids'));
 
-
+//Exportar rotas
 module.exports = produtos;
