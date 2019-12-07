@@ -18,7 +18,7 @@ raiz.get(
   '/',
   ash(async (request, result) => {
     //Encontra todos os Usuarios
-    const usuarios = await db.Usuarios.find({});
+    const usuarios = await db.Usuarios.find({}).populate('horarios.servico');
     //Entregar
     result.status(200).json(usuarios);
   })
@@ -32,15 +32,9 @@ raiz.post(
     const usuario = new db.Usuarios(request.body);
     //Enviar pra DB, e guardar na variavel pra entregar
     const retorno = await usuario.save();
-    //Url para enviar no header (boas praticas)
-    var url = request.protocol
-      + '://'
-      + request.get('host')
-      + request.originalUrl
-      + usuario._id;
 
     //Entregar
-    result.status(201).location(url).json(retorno);
+    result.status(201).json(retorno);
   })
 );
 

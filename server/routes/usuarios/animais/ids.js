@@ -17,11 +17,13 @@ const ash = require('express-async-handler');
 ids.get(
   '/',
   ash(async(request, result) => {
-    console.log(request.params.idAnimal);
-    //Buscar pelo animal com id dado
-    const animal = await db.Animais.findById(
-      request.params.idAnimal
-    );
+    //Acessa um usuario
+    const usuario = await db.Usuarios.findById(request.params.idUsuario);
+    //Pega seus animais
+    const animais = usuario.animais;
+    //Encontra o animal especificado
+    let animal = await animais.id(request.params.idAnimal);
+    
     //Entregar
     result.status(200).json(animal);
   })
@@ -31,22 +33,29 @@ ids.get(
 ids.put(
   '/',
   ash(async(request, result) => {
-    //Buscar pelo animal dado, e atualizar
-    const animal = await db.Animais.findByIdAndUpdate(
-      request.params.idAnimal,
-      request.body,
-      {
-        //Crie caso n exista
-        'upsert': true,
-        //Opcao para retornar o modificado
-        'new': true,
-        //Utilizar o novo metodo ao inves do obsoleto
-        //'https://mongoosejs.com/docs/deprecations.html#findandmodify'
-        'useFindAndModify': false
-      }
-    );
-    //Entregar
-    result.status(200).json(animal);
+    //Acessa um usuario
+    const usuario = await db.Usuarios.findById(request.params.idUsuario);
+    //Pega seus animais
+    const animais = usuario.animais;
+    //Encontra o animal especificado
+    let animal = await animais.id(request.params.idAnimal);
+    
+    //Caso exista, atualizar
+    if (animal) {
+      animal.set(request.body);
+    }
+    //Caso não exista
+    else {
+      //Guardar o ID dado
+      request.body._id = request.params.idAnimal;
+      //Adicionar requisicao no array de animais
+      animais.push(request.body);
+    }
+    
+    //Usuario atualizado
+    const retorno = await usuario.save();
+    //Entregar (com o animal atualizado no corpo)
+    result.status(200).json(retorno.animais.id(request.params.idAnimal));
   })
 );
 
@@ -54,17 +63,24 @@ ids.put(
 ids.delete(
   '/',
   ash(async(request, result) => {
-    //Buscar pelo animal com id dado, e apagar
-    const animal = await db.Animais.findByIdAndDelete(request.params.idAnimal);
+    //Acessa um usuario
+    const usuario = await db.Usuarios.findById(request.params.idUsuario);
+    //Pega seus animais
+    const animais = usuario.animais;
+    //Encontra o animal especificado
+    let animal = await animais.id(request.params.idAnimal);
+    
+    //Apagar animal
+    animal.remove();
+    
+    //Salvar
+    const retorno = await usuario.save();
+    
     //Entregar
     result.status(204).send();
   })
 );
 
 
-//Subrotas (para um dado animal)
-//ids.use('/agenda', require('./agenda'));
-
 //Exportar rotas
 module.exports = ids;
-

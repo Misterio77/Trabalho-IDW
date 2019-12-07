@@ -64,7 +64,8 @@ ids.delete(
 
 //Subrotas (para um dado usuario)
 ids.use('/animais', require('./animais'));
-//ids.use('/compras', require('./compras'));
+ids.use('/compras', require('./compras'));
+ids.use('/horarios', require('./horarios'));
 
 //Exportar rotas
 module.exports = ids;
