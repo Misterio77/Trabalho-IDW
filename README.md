@@ -103,7 +103,7 @@ No caso de Produtos e Serviços, todas as informações podem ser lidas livremen
 
 `POST /api/usuarios/logout/` - Apaga o Token usado na requisição, efetivamente deslogando. Adicione `/todos` no fim para apagar todos os Tokens do usuário.
 
-`GET /api/usuarios/eu/` - Equivalente de `/api/usuariios/<idUsuario>.`. Útil para obter um ID de usuário.
+`GET /api/usuarios/eu/` - Equivalente de `/api/usuariios/<idUsuario>`. Útil para obter um ID de usuário.
 
 ###### Agora, rotas que interagem com informações de usuarios.
 
@@ -142,6 +142,3 @@ No caso de Produtos e Serviços, todas as informações podem ser lidas livremen
 
 `DELETE /<produtos:servicos>/<id>` - Remover produto ou serviço.
 
-
-##### Diagrama
-![Diagrama](https://raw.githubusercontent.com/Misterio77/Trabalho-IDW/master/assets/flowchart.svg?sanitize=true)
