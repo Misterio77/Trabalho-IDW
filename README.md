@@ -25,15 +25,26 @@ Antes de tudo, você precisa ter NodeJS/NPM instalado. [Instruções aqui](https
 
 Além disso, você precisa de uma database MongoDB. Você pode hospedar sua própria, usar o [Atlas](https://cloud.mongodb.com/), ou usar a minha de testes mesmo (padrão se rodado em modo dev).
 
-Feito isso, basta clonar o repositório, entrar na pasta, e instalar as dependências com o NPM:
+Clone ou baixe o repositório da sua maneira preferida. Se você quer ir pelo git:
 ```
+git clone https://github.com/Misterio77/Trabalho-IDW
+```
+Entre na pasta:
+```
+cd Trabalho-IDW
+```
+
+Feito isso, precisamos instalar as dependencias do backend e do frontend. A partir da pasta raiz, use:
+```
+npm install
+cd client
 npm install
 ```
 
 Agora, decida se você quer rodar em modo production ou desenvolvimento:
 
 #### Production:
-Vamos usar o webpack para otimizar e "compilar" o app Vue para production. Entre na pasta `client` e use:
+Vamos usar o webpack para otimizar e "compilar" o app Vue para production. Ainda na pasta `client`, use:
 ```
 npm run build
 ```
@@ -49,7 +60,7 @@ npm run start
 ```
 
 #### Desenvolvimento:
-Vamos começar rodando o Vue-cli pelo script NPM para servir o frontend. Entre na pasta `client` e use:
+Vamos começar rodando o Vue-cli pelo script NPM para servir o frontend. Ainda na pasta `client`, use:
 ```
 npm run serve
 ```
