@@ -3,9 +3,7 @@
 
     <!-- Gaveta de navegação -->
     <v-navigation-drawer v-model="navAberta" fixed disable-resize-watcher temporary>
-    
 
-      
       <v-img v-if="this.$vuetify.theme.dark" align="center" height="210px" src="../../../assets/black.jpg">
         <v-row class="fill-height">
           <v-col align-self="center" class="pa-0" cols="12">
@@ -16,12 +14,9 @@
           <v-col class="py-0">
             <v-list-item color="rgba(0, 0, 0, .4)" dark>
               <v-list-item-content>
-      <div v-if="loading" class="text-center">
-        <v-progress-circular
-          indeterminate
-          color="secondary"
-        ></v-progress-circular>
-      </div>
+                <div v-if="loading" class="text-center">
+                  <v-progress-circular indeterminate color="secondary"></v-progress-circular>
+                </div>
                 <v-list-item-title v-if="this.logado" class="title">{{usuarioNome}}</v-list-item-title>
                 <v-list-item-subtitle v-if="this.logado">{{usuarioEmail}}</v-list-item-subtitle>
                 <v-list-item-subtitle v-if="this.logado && !this.usuarioAdmin">Usuário</v-list-item-subtitle>
@@ -42,12 +37,9 @@
           <v-col class="py-0">
             <v-list-item color="rgba(0, 0, 0, .4)" dark>
               <v-list-item-content>
-      <div v-if="loading" class="text-center">
-        <v-progress-circular
-          indeterminate
-          color="secondary"
-        ></v-progress-circular>
-      </div>
+                <div v-if="loading" class="text-center">
+                  <v-progress-circular indeterminate color="secondary"></v-progress-circular>
+                </div>
                 <v-list-item-title v-if="this.logado" class="title">{{usuarioNome}}</v-list-item-title>
                 <v-list-item-subtitle v-if="this.logado">{{usuarioEmail}}</v-list-item-subtitle>
                 <v-list-item-subtitle v-if="this.logado && !this.usuarioAdmin">Usuário</v-list-item-subtitle>
@@ -78,14 +70,14 @@
             <v-list-item-title>Loja</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      
-      <div v-if="loading" class="text-center">
-        <br /><br /><br /><br />
-        <v-progress-circular
-          indeterminate
-          color="secondary"
-        ></v-progress-circular>
-      </div>
+
+        <div v-if="loading" class="text-center">
+          <br />
+          <br />
+          <br />
+          <br />
+          <v-progress-circular indeterminate color="secondary"></v-progress-circular>
+        </div>
 
         <v-list-item v-if="logado" link>
           <v-list-item-icon>
@@ -115,7 +107,7 @@
         <v-card-title class="headline">Login</v-card-title>
         <v-form ref="form" align="center">
           <v-card-text>
-            <v-container fluid>
+            <v-container fluid v-on:keyup.enter="fazerLogin">
               <v-text-field v-model="loginEmail" label="Email" color="secondary" prepend-icon="mdi-email" outlined></v-text-field>
               <v-text-field v-model="loginSenha" :type="'password'" label="Senha" color="secondary" prepend-icon="mdi-lock" outlined></v-text-field>
 
@@ -141,10 +133,9 @@
         <v-form ref="form" align="center">
 
           <v-card-text>
-            <v-container fluid>
+            <v-container fluid  v-on:keyup.enter="fazerLogout">
               <v-row>
-                <p>Deseja mesmo encerrar sua sessão?
-                   Também pode encerrar as sessões em todos os dispositivos.</p>
+                <p>Deseja mesmo encerrar sua sessão? Também pode encerrar as sessões em todos os dispositivos.</p>
               </v-row>
               <v-row>
                 <v-checkbox color="secondary" label="Encerrar todas" v-model="logoutTodos"></v-checkbox>

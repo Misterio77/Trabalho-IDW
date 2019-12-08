@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <NavegacaoBarra/>
+    <NavBar />
     <v-content>
     <router-view></router-view>
     </v-content>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import NavegacaoBarra from '@/components/NavegacaoBarra.vue';
+import NavBar from '@/components/NavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    NavegacaoBarra
+    NavBar
   }
 };
 </script>
