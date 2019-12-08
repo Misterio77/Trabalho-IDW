@@ -23,7 +23,15 @@ rotas.get(
     //Caso seja o usuario especificado ou seja admin
     if (request.admin) {
       //Encontra todos os Usuarios
-      const usuarios = await db.Usuarios.find({});
+      const usuarios = await db.Usuarios.find({}).populate(
+      {
+        path:'horarios.servico',
+        model: 'Servico'
+      }).populate({
+        path: 'compras.produto',
+        model: 'Produto'
+      }
+      );
       //Entregar
       result.status(200).json(usuarios);
     }
@@ -66,13 +74,21 @@ rotas.get(
   auth,
   ash(async (request, result) => {
     //Buscar pelo usuario com id dado
-    const usuario = await db.Usuarios.findById(request.usuario._id);
+    const usuario = await db.Usuarios.findById(request.usuario._id).populate(
+      {
+        path:'horarios.servico',
+        model: 'Servico'
+      }).populate({
+        path: 'compras.produto',
+        model: 'Produto'
+      }
+      );
     //Entregar
     result.status(200).json(usuario);
   })
 );
 
-//POST - Recebe usuario e senha, cria devolve o token
+//POST - Login, Recebe usuario e senha, cria devolve o token
 rotas.post(
   '/login',
   ash(async (request, result) => {
@@ -83,12 +99,14 @@ rotas.post(
       } = request.body;
       const usuario = await db.Usuarios.buscarPorCredenciais(email, senha);
       const token = await usuario.gerarToken();
+      console.log(email +" entrou");
       result.status(200).send({
         usuario,
         token
       })
     }
-    catch {
+    catch (err) {
+      console.log(err);
       result.status(401).send({
         error: 'Login falhou. Cheque as credenciais.'
       })
@@ -96,7 +114,7 @@ rotas.post(
   })
 );
 
-//POST - Remove o token fornecido
+//POST - Logout, Remove o token fornecido
 rotas.post(
   '/logout',
   auth,
@@ -109,7 +127,7 @@ rotas.post(
   })
 );
 
-//POST - Remove todos os tokens do usuario cujo token foi fornecido
+//POST - Logout Todos, Remove todos os tokens do usuario cujo token foi fornecido
 rotas.post(
   '/logout/todos',
   auth,

@@ -28,7 +28,10 @@ rotas.get(
       request.params.idUsuario === request.usuario._id)
     ) {
       //Acessa um usuario
-      const usuario = await db.Usuarios.findById(request.params.idUsuario);
+      const usuario = await db.Usuarios.findById(request.params.idUsuario).populate({
+        path:'compras.produto',
+        model: 'Produto'
+      });
       //Pegar seus compras
       const compras = usuario.compras;
       //Entregar
@@ -52,7 +55,10 @@ rotas.post(
       request.params.idUsuario === request.usuario._id)
     ) {
       //Acessar usuario
-      const usuario = await db.Usuarios.findById(request.params.idUsuario);
+      const usuario = await db.Usuarios.findById(request.params.idUsuario).populate({
+        path:'compras.produto',
+        model: 'Produto'
+      });
       //Pegar seus compras
       const compras = usuario.compras;
       

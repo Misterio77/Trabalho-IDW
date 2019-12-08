@@ -27,7 +27,10 @@ rotas.get(
       request.params.idUsuario === request.usuario._id)
     ) {
       //Acessa um usuario
-      const usuario = await db.Usuarios.findById(request.params.idUsuario);
+      const usuario = await db.Usuarios.findById(request.params.idUsuario).populate({
+        path:'horarios.servico',
+        model: 'Servico'
+      });
       //Pega seus horarios
       const horarios = usuario.horarios;
       //Encontra o horario especificado
@@ -54,7 +57,10 @@ rotas.put(
       request.params.idUsuario === request.usuario._id)
     ) {
       //Acessa um usuario
-      const usuario = await db.Usuarios.findById(request.params.idUsuario);
+      const usuario = await db.Usuarios.findById(request.params.idUsuario).populate({
+        path:'horarios.servico',
+        model: 'Servico'
+      });
       //Pega seus horarios
       const horarios = usuario.horarios;
       //Encontra o horario especificado

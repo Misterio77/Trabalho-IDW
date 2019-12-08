@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const db = require.main.require('./db');
 
 module.exports = async(request, response, next) => {
-  const autorization = await request.header('Authorization')
+  const autorization = await request.header('Authorization');
   if (autorization) {
     try {
       const token = autorization.replace('Bearer ', '');
@@ -24,7 +24,7 @@ module.exports = async(request, response, next) => {
       console.log(usuario._id, usuario.nome);
       console.log('admin: ', request.admin);
       
-      //Devolver nome e token
+      //Devolver usuario e token
       request.usuario = usuario;
       request.token = token;
       next();

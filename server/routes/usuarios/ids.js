@@ -27,8 +27,14 @@ rotas.get(
       request.params.idUsuario === request.usuario._id)
     ) {
       //Buscar pelo usuario com id dado
-      const usuario = await db.Usuarios.findById(
-        request.params.idUsuario
+      const usuario = await db.Usuarios.findById(request.params.idUsuario).populate(
+      {
+        path:'horarios.servico',
+        model: 'Servico'
+      }).populate({
+        path: 'compras.produto',
+        model: 'Produto'
+      }
       );
       //Entregar
       result.status(200).json(usuario);
@@ -53,7 +59,15 @@ rotas.put(
       request.params.idUsuario === request.usuario._id)
     ) {
       //Buscar pelo usuario dado
-      const usuario = await db.Usuarios.findById(request.params.idUsuario);
+      const usuario = await db.Usuarios.findById(request.params.idUsuario).populate(
+      {
+        path:'horarios.servico',
+        model: 'Servico'
+      }).populate({
+        path: 'compras.produto',
+        model: 'Produto'
+      }
+      );
       let token = request.token;
 
       if (request.body.senha) {

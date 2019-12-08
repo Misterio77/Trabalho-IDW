@@ -15,7 +15,7 @@ module.exports = mongoose => {
   const ProdutoSchema = new mongoose.Schema({
     _id:        {type: String, default: shortid.generate},
     nome:       String,
-    imagem:     String,
+    imagem:     {type: String, default: 'http://misterio.me/assets/default.jpg'},
     descricao:  String,
     estoque:    Number,
     vendidos:   Number,
@@ -29,7 +29,7 @@ module.exports = mongoose => {
   const ServicoSchema = new mongoose.Schema({
     _id:        {type: String, default: shortid.generate},
     nome:       String,
-    imagem:     String,
+    imagem:     {type: String, default: 'http://misterio.me/assets/default.jpg'},
     descricao:  String,
     valor:      Number
   }, {
@@ -67,7 +67,7 @@ module.exports = mongoose => {
     }
     }],
     admin:      {type: Boolean, default: false},
-    imagem:     String,
+    imagem:     {type: String, default: 'http://misterio.me/assets/default.jpg'},
     endereco:   String,
     telefone:   String,
     animais: [{
@@ -100,7 +100,6 @@ module.exports = mongoose => {
     const usuario = this;
     if (usuario.isModified('senha')) {
       usuario.senha = await bcrypt.hash(usuario.senha, 8);
-      console.log(usuario.senha);
     }
     next();
   });
