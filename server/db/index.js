@@ -7,18 +7,13 @@ Para usar os modelos, basta importar "./db"
 */
 
 
-
 const mongoose = require('mongoose');
 
-const host = 'misterio0-ac0ai.gcp.mongodb.net';
-const database = 'test';
-const usuario  = 'abc123';
-const senha    = '123321';
-
-mongoose.connect(`mongodb+srv://${usuario}:${senha}@${host}/${database}`, {
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).catch(console.error.bind(console, "erro de database: "));
+mongoose.set('useCreateIndex', true);
 
 const models = require('./models')(mongoose);
 
