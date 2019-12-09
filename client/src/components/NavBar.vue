@@ -231,8 +231,9 @@
 </template>
 <script>
   import axios from 'axios';
+  const baseURL = process.env.NODE_ENV === 'production' ? 'http://idw.misterio.me' : 'http://localhost:5000'
   const api = axios.create({
-    baseURL: 'http://idw.misterio.me'
+    baseURL
   });
 
   export default {
