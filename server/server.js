@@ -17,6 +17,8 @@ O frontend (pasta 'client') é empacotado aqui (pasta 'server/public'), e servim
 //Imports
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config()
+
 
 const app = express();
 
