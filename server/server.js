@@ -30,6 +30,15 @@ app.use(express.urlencoded({ extended: false }));
 //Rotas do api
 app.use('/api', require('./routes'));
 
+//Handle production
+if(process.env.NODE_ENV === 'production') {
+  //Static folder
+  app.use(express.static(__dirname + '/public'));
+  
+  //Handle SPA
+  app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html'));
+}
+
 //Listen na porta especificada ou 5000 (padrao)
 
 app.listen(port, () => console.log(`Ouvindo na porta ${port}`));
