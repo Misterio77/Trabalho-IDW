@@ -9,7 +9,7 @@ Para usar os modelos, basta importar "./db"
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).catch(console.error.bind(console, "erro de database: "));
