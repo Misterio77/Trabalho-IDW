@@ -29,7 +29,7 @@ module.exports = mongoose => {
   const ServicoSchema = new mongoose.Schema({
     _id:        {type: String, default: shortid.generate},
     nome:       String,
-    imagem:     {type: String, default: 'http://misterio.me/assets/default.jpg'},
+    imagem:     {type: String, default: 'https://misterio.me/assets/default.jpg'},
     descricao:  String,
     valor:      Number
   }, {
