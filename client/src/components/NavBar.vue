@@ -108,8 +108,9 @@
         <v-form ref="form" align="center">
           <v-card-text>
             <v-container fluid v-on:keyup.enter="fazerRegistro">
+              <v-text-field v-model="registroNome" autocomplete="name" label="Nome Completo" color="secondary" prepend-icon="mdi-account-details" outlined></v-text-field>
               <v-text-field v-model="registroEmail" autocomplete="email" type="email" label="Email" color="secondary" prepend-icon="mdi-email" outlined></v-text-field>
-              <v-text-field v-model="loginSenha" autocomplete="new-password" :type="'password'" label="Senha" color="secondary" prepend-icon="mdi-lock" outlined></v-text-field>
+              <v-text-field v-model="registroSenha" autocomplete="new-password" :type="'password'" label="Senha" color="secondary" prepend-icon="mdi-lock" outlined></v-text-field>
               <v-text-field v-model="registroEndereco" autocomplete="street-address" label="Endereço" color="secondary" prepend-icon="mdi-home-city" outlined></v-text-field>
               <v-text-field v-model="registroTelefone" autocomplete="tel" label="Telefone" color="secondary" prepend-icon="mdi-cellphone" outlined></v-text-field>
 
@@ -300,6 +301,7 @@
         this.loading = true;
         try {
           const resposta = await api.post('/api/usuarios/', {
+            nome: this.registroNome,
             email: this.registroEmail,
             senha: this.registroSenha,
             endereco: this.registroEndereco,
@@ -309,6 +311,7 @@
 
           await this.quemSou();
           this.loading = false;
+          this.registroAberto = false;
           this.loginAberto = false;
 
         } catch (err) {

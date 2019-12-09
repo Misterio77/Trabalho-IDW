@@ -1,5 +1,5 @@
 module.exports = {
-  "outputDir": "/media/Media/Documents/GitHub/Trabalho-IDW/server/public",
+  "outputDir": "../server/public",
   "devServer": {
     "proxy": {
       "^/api": {
