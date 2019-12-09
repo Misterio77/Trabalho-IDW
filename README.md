@@ -17,6 +17,10 @@ Stage 3: Clientside only (Pulei essa entrega)
 
 [Stage 4: Final version](https://github.com/Misterio77/Trabalho-IDW/tree/master) - Work in Progress!
 
+Estado:
+O Backend está 100% feito, funcionando perfeitamente com autenticação e tudo.
+O Frontend ainda não está acabado, estou no processo de migrar funções pro VueX
+
 ## Como instalar?
 
 O programa é servido pelo NodeJS/Express. Que cuida das rotas do Rest API e também hospeda o app Vue.
@@ -52,7 +56,7 @@ Os arquivos estáticos serão criados na pasta `server/public`, prontos para ser
 
 Arrume as variáveis de environment como achar nescessário. Você precisa de uma URL para MongoDB, a porta para rodar o app (backend e frontend) e uma JWT string secreta. Por exemplo, no Linux:
 ```
-export PORT=80 JWT_KEY=AngelOfMusic MONGODB_URL='mongodb+srv://abc123:123321@misterio0-ac0ai.gcp.mongodb.net/petshop
+export PORT=80 JWT_KEY=AngelOfMusic MONGODB_URL='mongodb+srv://abc123:123321@misterio0-ac0ai.gcp.mongodb.net/petshop NODE_ENV='production'
 ```
 Agora basta iniciar o programa no modo production. Volte para a raiz do projeto e use:
 ```

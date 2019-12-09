@@ -101,14 +101,43 @@
 
     </v-navigation-drawer>
 
+    <!-- Tela de registro -->
+    <v-dialog v-model="registroAberto" max-width="350">
+      <v-card>
+        <v-card-title class="headline">Registrar</v-card-title>
+        <v-form ref="form" align="center">
+          <v-card-text>
+            <v-container fluid v-on:keyup.enter="fazerRegistro">
+              <v-text-field v-model="registroEmail" autocomplete="email" type="email" label="Email" color="secondary" prepend-icon="mdi-email" outlined></v-text-field>
+              <v-text-field v-model="loginSenha" autocomplete="new-password" :type="'password'" label="Senha" color="secondary" prepend-icon="mdi-lock" outlined></v-text-field>
+              <v-text-field v-model="registroEndereco" autocomplete="street-address" label="Endereço" color="secondary" prepend-icon="mdi-home-city" outlined></v-text-field>
+              <v-text-field v-model="registroTelefone" autocomplete="tel" label="Telefone" color="secondary" prepend-icon="mdi-cellphone" outlined></v-text-field>
+
+
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="secondary" text @click="registroAberto = false" :disabled="loading">
+              Cancelar
+            </v-btn>
+            <v-btn color="secondary" text @click="fazerRegistro" :loading="loading" :disabled="loading">
+              Registrar
+            </v-btn>
+          </v-card-actions>
+        </v-form>
+      </v-card>
+    </v-dialog>
+
     <!-- Tela de login -->
     <v-dialog v-model="loginAberto" max-width="350">
       <v-card>
         <v-card-title class="headline">Login</v-card-title>
+        <v-btn text color="secondary" @click="registroAberto = true">Ainda não tem conta?</v-btn>
         <v-form ref="form" align="center">
           <v-card-text>
-            <v-container fluid v-on:keyup.enter="fazerLogin">
-              <v-text-field v-model="loginEmail" label="Email" color="secondary" prepend-icon="mdi-email" outlined></v-text-field>
+            <v-container fluid>
+              <v-text-field v-model="loginEmail" type="email" label="Email" color="secondary" prepend-icon="mdi-email" outlined></v-text-field>
               <v-text-field v-model="loginSenha" :type="'password'" label="Senha" color="secondary" prepend-icon="mdi-lock" outlined></v-text-field>
 
             </v-container>
@@ -118,7 +147,7 @@
             <v-btn color="secondary" text @click="loginAberto = false" :disabled="loading">
               Cancelar
             </v-btn>
-            <v-btn color="secondary" text @click="fazerLogin" :loading="loading" :disabled="loading">
+            <v-btn type="submit" color="secondary" text @click="fazerLogin" :loading="loading" :disabled="loading">
               Login
             </v-btn>
           </v-card-actions>
@@ -133,7 +162,7 @@
         <v-form ref="form" align="center">
 
           <v-card-text>
-            <v-container fluid  v-on:keyup.enter="fazerLogout">
+            <v-container fluid>
               <v-row>
                 <p>Deseja mesmo encerrar sua sessão? Também pode encerrar as sessões em todos os dispositivos.</p>
               </v-row>
@@ -148,7 +177,7 @@
             <v-btn color="secondary" text @click="logoutAberto = false" :disabled="loading">
               Cancelar
             </v-btn>
-            <v-btn color="secondary" text @click="fazerLogout(logoutTodos)" :loading="loading" :disabled="loading">
+            <v-btn type="submit" color="secondary" text @click="fazerLogout(logoutTodos)" :loading="loading" :disabled="loading">
               Sim
             </v-btn>
           </v-card-actions>
@@ -265,6 +294,29 @@
         }
       },
 
+      //Fazer registro
+      fazerRegistro: async function() {
+        //Efeito de carregando
+        this.loading = true;
+        try {
+          const resposta = await api.post('/api/usuarios/', {
+            email: this.registroEmail,
+            senha: this.registroSenha,
+            endereco: this.registroEndereco,
+            telefone: this.registroTelefone
+          });
+          await this.$cookie.set('token', resposta.data.token);
+
+          await this.quemSou();
+          this.loading = false;
+          this.loginAberto = false;
+
+        } catch (err) {
+          window.console.log(err);
+          this.loading = false;
+        }
+      },
+
       //Utiliza o Token guardado (se existir), para obter informações do usuário logado
       quemSou: async function() {
         try {
@@ -319,11 +371,18 @@
       loginEmail: '',
       loginSenha: '',
       logoutTodos: false,
+      
+      registroNome: '',
+      registroEmail: '',
+      registroSenha: '',
+      registroEndereco: '',
+      registroTelefone: '',
 
       //Variaveis que ditam a abertura dos menus
       navAberta: false,
       loginAberto: false,
       logoutAberto: false,
+      registroAberto: false,
 
       //Fundo correto para o menu
       fundo: '',
