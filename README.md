@@ -55,26 +55,27 @@ npm run build
 Os arquivos estáticos serão criados na pasta `server/public`, prontos para serem servidos pelo node.
 
 Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database qualquer no Atlas).
+No modo production, o client usará como backend "idw.misterio.me", mude isso na `.env` do cliente, caso queira.
 
-Agora basta iniciar o programa no modo production. Volte para a raiz do projeto e use:
+Agora basta iniciar o backend no modo production. Volte para a raiz do projeto e use:
 ```
 npm run start
 ```
-Pronto! Basta acessar o hostname e porta especificados. (Caso tenha problemas com a 80, rode como sudo ou use outra porta)
+Pronto! Basta acessar o hostname e porta especificados.
 
 #### Desenvolvimento:
 Vamos começar rodando o Vue-cli pelo script NPM para servir o frontend. Ainda na pasta `client`, use:
 ```
 npm run serve
 ```
-Como padrão, irá rodar na porta 1024, e ir em busca do backend em localhost:5000.
+Como padrão, irá em busca do backend em localhost:5000.
 
 Agora, vamos rodar o backend em modo de desenvolvimento (com hot-reload). Na pasta raiz, use:
 ```
 npm run dev
 ```
 Como padrão, irá rodar na porta 5000, usar a JWT string `BrilhoAlemDaFlor` e minha database de testes.
-(Não recomendo mudar a porta, já que o proxy do Vue está configurado para fazer requisições dev em localhost:5000, mas pode alterar se julgar nescessário.)
+(Não recomendo mudar a porta, já que o Vue em development está configurado para fazer requisições dev em localhost:5000, mas pode alterar se julgar nescessário.)
 
 
 ## Funcionalidade:
