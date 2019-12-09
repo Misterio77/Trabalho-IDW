@@ -54,14 +54,13 @@ npm run build
 ```
 Os arquivos estáticos serão criados na pasta `server/public`, prontos para serem servidos pelo node.
 
-Arrume as variáveis de environment como achar nescessário. Você precisa de uma URL para MongoDB, a porta para rodar o app (backend e frontend) e uma JWT string secreta. Por exemplo, no Linux:
-```
-export PORT=80 JWT_KEY=AngelOfMusic MONGODB_URL='mongodb+srv://abc123:123321@misterio0-ac0ai.gcp.mongodb.net/petshop' NODE_ENV='production'
-```
+Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database no Atlas).
+
 Agora basta iniciar o programa no modo production. Volte para a raiz do projeto e use:
 ```
 npm run start
 ```
+Pronto! Basta acessar o hostname e porta especificados. (Caso tenha problemas com a 80, rode como sudo ou use outra porta)
 
 #### Desenvolvimento:
 Vamos começar rodando o Vue-cli pelo script NPM para servir o frontend. Ainda na pasta `client`, use:
@@ -75,7 +74,7 @@ Agora, vamos rodar o backend em modo de desenvolvimento (com hot-reload). Na pas
 npm run dev
 ```
 Como padrão, irá rodar na porta 5000, usar a JWT string `BrilhoAlemDaFlor` e minha database de testes.
-(Não recomendo mudar a porta, já que o proxy do Vue está configurado para fazer requisições em localhost:5000, mas pode alterar se julgar nescessário.)
+(Não recomendo mudar a porta, já que o proxy do Vue está configurado para fazer requisições dev em localhost:5000, mas pode alterar se julgar nescessário.)
 
 
 ## Funcionalidade:
