@@ -5,7 +5,6 @@ import vuetify from './plugins/vuetify';
 
 import VueCookie from 'vue-cookie';
 import store from './store'
-require('dotenv').config()
 
 Vue.config.productionTip = false
 new Vue({
