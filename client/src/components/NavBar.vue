@@ -231,14 +231,8 @@
 </template>
 <script>
   import axios from 'axios';
-  if (process.env.NODE_ENV === 'production') {
-    const baseURL = process.env.BACKEND;
-  }
-  else {
-    const baseURL = ''
-  }
   const api = axios.create({
-    baseURL: baseURL
+    baseURL: (process.env.NODE_ENV === 'production') ? process.env.BACKEND : ''
   });
 
   export default {
