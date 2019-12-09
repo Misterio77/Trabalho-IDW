@@ -27,7 +27,7 @@ O programa é servido pelo NodeJS/Express. Que cuida das rotas do Rest API e tam
 
 Antes de tudo, você precisa ter NodeJS/NPM instalado. [Instruções aqui](https://nodejs.org/en/download/).
 
-Além disso, você precisa de uma database MongoDB. Você pode hospedar sua própria, usar o [Atlas](https://cloud.mongodb.com/), ou usar a minha de testes mesmo (padrão se rodado em modo dev).
+Além disso, você precisa de uma database MongoDB. Você pode hospedar sua própria, usar o [Atlas](https://cloud.mongodb.com/), ou usar a minha mesmo.
 
 Clone ou baixe o repositório da sua maneira preferida. Se você quer ir pelo git:
 ```
@@ -54,7 +54,7 @@ npm run build
 ```
 Os arquivos estáticos serão criados na pasta `server/public`, prontos para serem servidos pelo node.
 
-Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database no Atlas).
+Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database qualquer no Atlas).
 
 Agora basta iniciar o programa no modo production. Volte para a raiz do projeto e use:
 ```
@@ -67,7 +67,7 @@ Vamos começar rodando o Vue-cli pelo script NPM para servir o frontend. Ainda n
 ```
 npm run serve
 ```
-Como padrão, irá rodar na porta 8080.
+Como padrão, irá rodar na porta 1024, e ir em busca do backend em localhost:5000.
 
 Agora, vamos rodar o backend em modo de desenvolvimento (com hot-reload). Na pasta raiz, use:
 ```
