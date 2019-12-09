@@ -235,7 +235,7 @@
     const baseURL = process.env.BACKEND;
   }
   else {
-    const baseURL = 'http://localhost:5000';
+    const baseURL = ''
   }
   const api = axios.create({
     baseURL
