@@ -56,7 +56,7 @@ Os arquivos estáticos serão criados na pasta `server/public`, prontos para ser
 
 Arrume as variáveis de environment como achar nescessário. Você precisa de uma URL para MongoDB, a porta para rodar o app (backend e frontend) e uma JWT string secreta. Por exemplo, no Linux:
 ```
-export PORT=80 JWT_KEY=AngelOfMusic MONGODB_URL='mongodb+srv://abc123:123321@misterio0-ac0ai.gcp.mongodb.net/petshop NODE_ENV='production'
+export PORT=80 JWT_KEY=AngelOfMusic MONGODB_URL='mongodb+srv://abc123:123321@misterio0-ac0ai.gcp.mongodb.net/petshop' NODE_ENV='production'
 ```
 Agora basta iniciar o programa no modo production. Volte para a raiz do projeto e use:
 ```
