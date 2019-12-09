@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "env-cmd -f ./.env nodemon server/server.js"
+    "dev": "env-cmd -f ./.env_dev nodemon server/server.js"
   },
   "author": "Misterio",
   "license": "GPL-3.0-or-later",
