@@ -54,7 +54,7 @@ npm run build
 ```
 Os arquivos estáticos serão criados na pasta `server/public`, prontos para serem servidos pelo node.
 
-Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database qualquer no Atlas).
+Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database qualquer no Atlas). A porta padrão é 8080.
 No modo production, como padrao, o client acessará o servidor na mesma url e porta, já que rodam juntos.
 
 Agora basta iniciar o backend no modo production. Volte para a raiz do projeto e use:
