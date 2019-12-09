@@ -238,7 +238,7 @@
     const baseURL = ''
   }
   const api = axios.create({
-    baseURL
+    baseURL: baseURL
   });
 
   export default {
