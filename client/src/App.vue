@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <AppHeader @darkMode="darkMode" />
+    <NavBar />
     <v-content>
     <router-view></router-view>
     </v-content>
@@ -8,27 +8,12 @@
 </template>
 
 <script>
-  import axios from 'axios';
-  const api = axios.create({
-    baseURL: (process.env.NODE_ENV === 'production') ? process.env.BACKEND : ''
-  });
-  import AppHeader from '@/components/AppHeader';
+import NavBar from '@/components/NavBar.vue';
 
-  export default {
-    name: 'App',
-    components: {
-      AppHeader,
-      AppAuth,
-    },
-    methods: {
-      //Modo noturno manual
-      darkMode() {
-        this.$vuetify.theme.dark = !(this.$vuetify.theme.dark);
-      },
-    },
-    mounted: {
-    //Verificar se o dispositivo está em dark mode
-      this.$vuetify.theme.dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-  };
+export default {
+  name: 'App',
+  components: {
+    NavBar
+  }
+};
 </script>
