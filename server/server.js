@@ -43,4 +43,4 @@ if(process.env.NODE_ENV === 'production') {
 
 //Listen na porta especificada ou 5000 (padrao)
 
-app.listen(port, () => console.log(`Ouvindo na porta ${port}`));
+app.listen(port, () => console.log(`Ouvindo na porta ${port}, no modo ${process.env.NODE_ENV}`));
