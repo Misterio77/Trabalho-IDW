@@ -19,7 +19,7 @@ Stage 3: Clientside only (Pulei essa entrega)
 
 Estado:
 O Backend está 100% feito, funcionando perfeitamente com autenticação e tudo.
-O Frontend ainda não está acabado, estou no processo de migrar funções pro VueX
+O Frontend ainda não está acabado, provavelmente não está pronto a tempo da entrega. Está bem bagunçado e estou no processo de reestruturar. Mas, ao menos, o básico de login/logout e interação com o backend está feito.
 
 ## Como instalar?
 
@@ -54,28 +54,32 @@ npm run build
 ```
 Os arquivos estáticos serão criados na pasta `server/public`, prontos para serem servidos pelo node.
 
-Arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc. Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database qualquer no Atlas). A porta padrão é 8080.
-No modo production, como padrao, o client acessará o servidor na mesma url e porta, já que rodam juntos.
+No production, a porta padrão do backend é 8080. O frontend será servido por meio dele.
+
+O frontend buscará o backend na mesmo host e porta que ele está sendo servido.
+
+Caso queira, arrume as variáveis de environment como achar nescessário, em sua IDE, cloud, etc.
+Você também pode dar uma olhada no arquivo `.env`, que tem as variáveis para produção que eu setei (inclui uma database no MongoDB Atlas).
 
 Agora basta iniciar o backend no modo production. Volte para a raiz do projeto e use:
 ```
 npm run start
 ```
-Pronto! Basta acessar o hostname e porta especificados.
+Pronto!
 
 #### Desenvolvimento:
-Vamos começar rodando o Vue-cli pelo script NPM para servir o frontend. Ainda na pasta `client`, use:
+Vamos começar rodando script NPM 'serve' para servir o frontend. Ainda na pasta `client`, use:
 ```
 npm run serve
 ```
-Como padrão, irá em busca do backend em localhost:5000. Você pode mudar isso em `client/.env` ou usar variaveis de environment.
+Assim como no production, ele busca o backend no mesmo host e porta. Porém, como no modo dev rodamos os dois separadamente, ele usará a `localhost:5000` como proxy do `/api`.
 
 Agora, vamos rodar o backend em modo de desenvolvimento (com hot-reload). Na pasta raiz, use:
 ```
 npm run dev
 ```
-Como padrão, irá rodar na porta 5000, usar a JWT string `BrilhoAlemDaFlor` e minha database de testes.
-(Não recomendo mudar a porta, já que o Vue em development está configurado para fazer requisições dev em localhost:5000, mas pode alterar se julgar nescessário.)
+Como padrão, irá rodar na porta 5000, usar a JWT string `BrilhoAlemDaFlor` e minha database de testes (também no atlas).
+Caso queira mudar a porta do backend, você também deve mudar o proxy em `client/vue.config.js`
 
 
 ## Funcionalidade:
