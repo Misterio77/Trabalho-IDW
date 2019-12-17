@@ -4,7 +4,7 @@ import router from './router'
 import vuetify from './plugins/vuetify';
 require('dotenv').config();
 
-import VueCookie from 'vue-cookie';
+import VueCookies from 'vue-cookies';
 import store from './store'
 
 
@@ -16,4 +16,4 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-Vue.use(VueCookie);
+Vue.use(VueCookies);

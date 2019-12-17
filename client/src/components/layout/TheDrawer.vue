@@ -1,23 +1,23 @@
 <template>
-  <v-navigation-drawer v-model="navAberta" fixed disable-resize-watcher temporary>
+  <v-navigation-drawer v-model="aberta" @input="$emit('toggle-nav', $event)" fixed disable-resize-watcher temporary>
 
-    <v-img align="center" height="210px" :src="{{ fundo }}">
+    <v-img align="center" height="210px" :src="fundo">
       <v-row class="fill-height">
         <v-col align-self="center" class="pa-0" cols="12">
-          <v-avatar class="profile" color="grey" size="70" v-if="this.logado">
+          <v-avatar class="profile" color="grey" size="70" v-if="usuario.logado">
             <v-img :src="usuarioImagem"></v-img>
           </v-avatar>
         </v-col>
         <v-col class="py-0">
           <v-list-item color="rgba(0, 0, 0, .4)" dark>
             <v-list-item-content>
-              <div v-if="loading" class="text-center">
+              <div v-if="carregando" class="text-center">
                 <v-progress-circular indeterminate color="secondary"></v-progress-circular>
               </div>
-              <v-list-item-title v-if="this.logado" class="title">{{usuarioNome}}</v-list-item-title>
-              <v-list-item-subtitle v-if="this.logado">{{usuarioEmail}}</v-list-item-subtitle>
-              <v-list-item-subtitle v-if="this.logado && !this.usuarioAdmin">Usuário</v-list-item-subtitle>
-              <v-list-item-subtitle v-if="this.logado && this.usuarioAdmin">Administrador</v-list-item-subtitle>
+              <v-list-item-title v-if="usuario.logado" class="title">{{usuarioNome}}</v-list-item-title>
+              <v-list-item-subtitle v-if="usuario.logado">{{usuarioEmail}}</v-list-item-subtitle>
+              <v-list-item-subtitle v-if="usuario.logado && !this.usuarioAdmin">Usuário</v-list-item-subtitle>
+              <v-list-item-subtitle v-if="usuario.logado && this.usuarioAdmin">Administrador</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-col>
@@ -45,7 +45,7 @@
         </v-list-item-content>
       </v-list-item>
 
-      <div v-if="loading" class="text-center">
+      <div v-if="carregando" class="text-center">
         <br />
         <br />
         <br />
@@ -53,7 +53,7 @@
         <v-progress-circular indeterminate color="secondary"></v-progress-circular>
       </div>
 
-      <v-list-item v-if="logado" link>
+      <v-list-item v-if="usuario.logado" link>
         <v-list-item-icon>
           <v-icon>mdi-account</v-icon>
         </v-list-item-icon>
@@ -62,7 +62,7 @@
         </v-list-item-content>
       </v-list-item>
 
-      <v-list-item v-if="usuarioAdmin" link>
+      <v-list-item v-if="usuario.admin" link>
         <v-list-item-icon>
           <v-icon>mdi-cogs</v-icon>
         </v-list-item-icon>
@@ -78,12 +78,15 @@
 
 <script>
   export default {
-    methods: {
-      //Abrir menu de navegação
-      abrirNav() {
-        this.navAberta = !this.navAberta;
-        this.quemSou();
-      },
+    methods: {},
+    props: [
+      'carregando',
+      'aberta',
+      'usuario',
+    ],
+    model: {
+      prop: 'aberta',
+      event: 'toggle-nav',
     },
     computed: {
       fundo() {
@@ -91,12 +94,6 @@
           return '@/assets/black.jpg';
         else
           return '@/assets/white.jpg';
-      }
-    }
-    data() {
-      return {
-      //Está aberta?
-      aberta: false,
       }
     },
   };
