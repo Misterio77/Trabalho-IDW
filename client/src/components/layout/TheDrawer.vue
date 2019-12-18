@@ -1,11 +1,11 @@
 <template>
-  <v-navigation-drawer v-model="aberta" @input="$emit('toggle-nav', $event)" fixed disable-resize-watcher temporary>
+  <v-navigation-drawer :value="aberta" @input="$emit('toggle-nav', $event)" fixed disable-resize-watcher temporary>
 
-    <v-img align="center" height="210px" :src="fundo">
+    <v-img align="center" height="210px" :src="require(`@/assets/${fundo}`)">
       <v-row class="fill-height">
         <v-col align-self="center" class="pa-0" cols="12">
           <v-avatar class="profile" color="grey" size="70" v-if="usuario.logado">
-            <v-img :src="usuarioImagem"></v-img>
+            <v-img :src="usuario.imagem"></v-img>
           </v-avatar>
         </v-col>
         <v-col class="py-0">
@@ -14,10 +14,10 @@
               <div v-if="carregando" class="text-center">
                 <v-progress-circular indeterminate color="secondary"></v-progress-circular>
               </div>
-              <v-list-item-title v-if="usuario.logado" class="title">{{usuarioNome}}</v-list-item-title>
-              <v-list-item-subtitle v-if="usuario.logado">{{usuarioEmail}}</v-list-item-subtitle>
-              <v-list-item-subtitle v-if="usuario.logado && !this.usuarioAdmin">Usuário</v-list-item-subtitle>
-              <v-list-item-subtitle v-if="usuario.logado && this.usuarioAdmin">Administrador</v-list-item-subtitle>
+              <v-list-item-title v-if="usuario.logado" class="title">{{usuario.dados.nome}}</v-list-item-title>
+              <v-list-item-subtitle v-if="usuario.logado">{{usuario.dados.email}}</v-list-item-subtitle>
+              <v-list-item-subtitle v-if="usuario.logado && !usuario.admin">Usuário</v-list-item-subtitle>
+              <v-list-item-subtitle v-if="usuario.logado && usuario.admin">Administrador</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-col>
@@ -91,10 +91,10 @@
     computed: {
       fundo() {
         if (this.$vuetify.theme.dark)
-          return '@/assets/black.jpg';
+          return "black.jpg";
         else
-          return '@/assets/white.jpg';
-      }
+          return "white.jpg";
+      },
     },
   };
 </script>

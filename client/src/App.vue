@@ -72,12 +72,14 @@
           });
           //Guardar usuario, caso sessão valida
           this.usuario.dados = request.data;
-          this.usuario.logado = (this.usuario.dados !== null);
+          this.usuario.logado = true;
           this.usuario.admin = this.usuario.dados.admin;
         }
         catch {
           //Caso a sessão seja invalida
           this.usuario.dados = null;
+          this.usuario.logado = false;
+          this.usuario.admin = false;
         }
         this.carregando = false;
       },

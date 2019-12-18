@@ -20,11 +20,11 @@ module.exports = async(request, response, next) => {
       }
       
       //Verificar se é admin
-      request.admin = usuario.admin;
       console.log(usuario._id, usuario.nome);
-      console.log('admin: ', request.admin);
+      console.log('admin: ', usuario.admin);
       
-      //Devolver usuario e token
+      //Devolver usuario, token e status de admin
+      request.admin = usuario.admin;
       request.usuario = usuario;
       request.token = token;
       next();

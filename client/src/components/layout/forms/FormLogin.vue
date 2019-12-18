@@ -37,7 +37,7 @@
             email: this.loginEmail,
             senha: this.loginSenha
           });
-          await this.$cookie.set('token', resposta.data.token);
+          await this.$cookie.set('token', resposta.data.token, '1d');
 
           await this.quemSou();
           this.loading = false;
