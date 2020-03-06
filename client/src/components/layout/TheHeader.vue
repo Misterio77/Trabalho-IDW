@@ -68,7 +68,7 @@
       <v-btn
         icon
         v-on="on"
-        @click="$emit('dark-mode')"
+        @click="mudarDarkMode"
       >
         <v-icon>mdi-brightness-6</v-icon>
       </v-btn>
@@ -86,8 +86,10 @@
 export default {
   methods: {},
   props: ["carregando", "usuario"],
-  data() {
-    return {};
-  }
+  methods: {
+    mudarDarkMode(modo) {
+      this.$store.commit('mudarDarkMode', modo)
+    },
+  },
 };
 </script>
